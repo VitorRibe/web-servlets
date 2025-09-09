@@ -8,6 +8,10 @@ Trabalho para a disciplina de Desenvolvimento WEB — 5º período (Ciência da 
 Três pequenas aplicações web em **Jakarta EE** (Servlets) que demonstram envio de formulários HTML, tratamento de parâmetros, separação de regras de negócio e resposta em HTML. Estilo via `style.css` e ícones via Font Awesome.
 
 ---
+<p align="center">
+  <img src="images/homepage.png" alt="Tela home" />
+</p>
+---
 
 ## Requisitos
 - Java 21  
@@ -79,7 +83,7 @@ ExercicioServlets/
 
 **Exemplo de saída**
 <p align="center">
-  <img src="images/calcResult.png" alt="Exemplo da aplicação 1" />
+  <img src="images/calcResult.png" alt="Exemplo da aplicação 2" />
 </p>
 
 ---
@@ -87,7 +91,7 @@ ExercicioServlets/
 ### 2) Distância entre pontos (POST)
 
 <p align="center">
-  <img src="images/measureHome.png" alt="Exemplo da aplicação 1" />
+  <img src="images/measureHome.png" alt="Exemplo da aplicação 3" />
 </p>
 
 - **Página:** `aplicacao2.html`  
