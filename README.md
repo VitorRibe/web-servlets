@@ -11,7 +11,7 @@ Três pequenas aplicações web em **Jakarta EE** (Servlets) que demonstram envi
 <p align="center">
   <img src="images/homepage.png" alt="Tela home" />
 </p>
----
+
 
 ## Requisitos
 - Java 21  
