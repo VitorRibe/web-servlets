@@ -1,6 +1,50 @@
 # Jakarta Enterprise Edition: Servlets
-Trabalho realizado para a disciplina de Desenvolvimento WEB do 5º período em Ciência da Computação
 
+Trabalho para a disciplina de Desenvolvimento WEB — 5º período (Ciência da Computação).
+
+---
+
+## Resumo do projeto
+Três pequenas aplicações web em **Jakarta EE** (Servlets) que demonstram envio de formulários HTML, tratamento de parâmetros, separação de regras de negócio e resposta em HTML. Estilo via `style.css` e ícones via Font Awesome.
+
+---
+
+## Requisitos
+- Java 21  
+- NetBeans (ou IDE equivalente)  
+- WildFly (configurado no NetBeans)  
+- Maven (projeto Maven)  
+
+---
+
+## Estrutura do projeto
+```
+ExercicioServlets/
+│
+├─ src/main/java/io/github/vitorribe/joaobotelhoexercicioservlets/
+│ │
+│ ├─ servlets/
+│ │ │
+│ │ ├─ CalculadoraServlet.java (GET /calculadora)
+│ │ ├─ DistanciaServlet.java (POST /distancia)
+│ │ └─ IMCServlet.java (POST /imc)
+│ │
+│ └─ negocio/
+│   │
+│   ├─ Calculadora.java
+│   ├─ Ponto.java
+│   └─ IMC.java (com ResultadoIMC)
+│
+├─ src/main/webapp/
+| |
+│ ├─ index.html
+│ ├─ aplicacao1.html
+│ ├─ aplicacao2.html
+│ ├─ aplicacao3.html
+│ └─ style.css
+|
+└─ pom.xml
+```
 
 
 ---
@@ -13,12 +57,12 @@ Trabalho realizado para a disciplina de Desenvolvimento WEB do 5º período em C
 
 ---
 
-## Aplicações — funcionamento detalhado
+## Aplicações
 
 ### 1) Calculadora (GET)
 
 <p align="center">
-  <img src="dimages/calcHome.png" alt="Exemplo da aplicação 1" width="400"/>
+  <img src="images/calcHome.png" alt="Exemplo da aplicação 1" />
 </p>
 
 - **Página:** `aplicacao1.html`  
@@ -33,9 +77,19 @@ Trabalho realizado para a disciplina de Desenvolvimento WEB do 5º período em C
 4. Resposta exibida em HTML.
 
 
+**Exemplo de saída**
+<p align="center">
+  <img src="images/calcResult.png" alt="Exemplo da aplicação 1" />
+</p>
+
 ---
 
 ### 2) Distância entre pontos (POST)
+
+<p align="center">
+  <img src="images/measureHome.png" alt="Exemplo da aplicação 1" />
+</p>
+
 - **Página:** `aplicacao2.html`  
 - **Form:** `method="post"`, campos `x1`, `y1`, `x2`, `y2`  
 - **Servlet:** `DistanciaServlet`  
@@ -44,14 +98,20 @@ Trabalho realizado para a disciplina de Desenvolvimento WEB do 5º período em C
 **Fluxo**
 1. Form envia POST para `/distancia`.  
 2. Servlet cria objetos `Ponto` e calcula a distância com `p1.distancia(p2)`.  
-3. Resultado exibido em HTML com botão de voltar.
+3. Resposta exibida em HTML.
 
-**Exemplo:**  
-Entrada: (0,0) e (3,4) → Saída: `5.0`
+**Exemplo de saída**
+<p align="center">
+  <img src="images/measureResult.png" alt="Exemplo da aplicação 1" />
+</p>
 
 ---
 
 ### 3) Calculadora de IMC (POST)
+<p align="center">
+  <img src="images/imcHome.png" alt="Exemplo da aplicação 1" />
+</p>
+
 - **Página:** `aplicacao3.html`  
 - **Form:** `method="post"`, campos `peso` (kg), `altura` (m)  
 - **Servlet:** `IMCServlet`  
@@ -63,20 +123,16 @@ Entrada: (0,0) e (3,4) → Saída: `5.0`
 3. HTML exibe:
    - Texto com resultado.  
    - Barra colorida (`div.imc-scale`) proporcional ao IMC.  
-   - Legenda com faixas (`<18.5`, `18.5–24.9`, `25–29.9`, `>=30`).  
-   - Botão de voltar estilizado.
+   - Legenda com faixas (`<18.5`, `18.5–24.9`, `25–29.9`, `>=30`). 
+
+
+**Exemplo de saída**
+<p align="center">
+  <img src="images/imcResult.png" alt="Exemplo da aplicação 1" />
+</p>
+
 
 ---
 
 ## CSS
-- Estilos definidos em `style.css`, aplicado a todas as páginas.  
-- Barra de IMC centralizada e limitada em largura:
-```css
-.imc-scale {
-  width: 400px;
-  max-width: 90%;
-  margin: 20px auto;
-  height: 20px;
-  background: #ddd;
-  border-radius: 8px;
-}
+- Estilos definidos em `style.css`, aplicado a todas as páginas.
