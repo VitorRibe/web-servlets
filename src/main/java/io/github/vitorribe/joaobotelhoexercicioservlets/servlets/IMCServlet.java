@@ -52,23 +52,67 @@ public class IMCServlet extends HttpServlet {
         String alturaStr = request.getParameter("altura");
 
         try (PrintWriter out = response.getWriter()) {
-            out.println("<html><body>");
-            out.println("<h1>Calculadora de IMC</h1>");
+            out.println("<html><head>");
+            out.println("<link rel='stylesheet' type='text/css' href='style.css'>");
+            out.println("<title>Calculadora de IMC</title>");
+            out.println("</head><body>");
 
             try {
                 double peso = Double.parseDouble(pesoStr);
                 double altura = Double.parseDouble(alturaStr);
 
-                out.println(IMC.calcular(peso, altura));
+                // Calcula IMC usando a classe de negócio
+                IMC.ResultadoIMC resultado = IMC.calcular(peso, altura);
+                double imc = resultado.valor;
+                String faixa = resultado.faixa;
+
+                // Define a cor da barra conforme a faixa
+                String faixaClass;
+                switch (faixa) {
+                    case "Magreza": faixaClass = "imc-magreza"; break;
+                    case "Normal": faixaClass = "imc-normal"; break;
+                    case "Sobrepeso": faixaClass = "imc-sobrepeso"; break;
+                    case "Obesidade": faixaClass = "imc-obesidade"; break;
+                    default: faixaClass = "imc-magreza"; break;
+                }
+
+                // Converte IMC em percentual para a barra (escala 0-40)
+                int widthPercent = (int) Math.min((imc / 40) * 100, 100);
+
+                // Resultado 
+                out.println("<h1>Seu IMC é: " + String.format("%.2f", imc) + "</h1>");
+                out.println("<p>" + faixa + "</p>");
+
+                // Barra visual
+                out.println("<div class='imc-scale'>");
+                out.println("<div class='imc-indicator " + faixaClass + "' style='width:" + widthPercent + "%'></div>");
+                out.println("</div>");
+
+                // Legenda
+                out.println("<div class='imc-legend'>");
+                out.println("<div><span>Magreza</span><br><small>&lt; 18.5</small></div>");
+                out.println("<div><span>Normal</span><br><small>18.5 – 24.9</small></div>");
+                out.println("<div><span>Sobrepeso</span><br><small>25 – 29.9</small></div>");
+                out.println("<div><span>Obesidade</span><br><small>≥ 30</small></div>");
+                out.println("</div>");
+
+                // Botão
+                out.println("<div class='center-container'>");
+                out.println("<a class='btn-back' href='aplicacao3.html'>Voltar</a>");
+                out.println("</div>");
 
             } catch (NumberFormatException e) {
+                // Caso os valores não sejam números
                 out.println("<p>Erro: valores inválidos! Insira apenas números.</p>");
+                out.println("<div class='center-container'>");
+                out.println("<a class='btn-back' href='aplicacao3.html'>Voltar</a>");
+                out.println("</div>");
             }
 
-            out.println("<a href='aplicacao3.html'>Voltar</a>");
             out.println("</body></html>");
         }
     }
+
 
     /**
      * Returns a short description of the servlet.

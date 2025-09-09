@@ -57,7 +57,7 @@ public class DistanciaServlet extends HttpServlet {
         String y2Str = request.getParameter("y2");
 
         try (PrintWriter out = response.getWriter()) {
-            out.println("<html><body>");
+            out.println("<html><link rel='stylesheet' type='text/css' href='style.css'><body>");
             out.println("<h1>Distância entre Pontos</h1>");
 
             try {
@@ -76,7 +76,9 @@ public class DistanciaServlet extends HttpServlet {
                 out.println("<p>Erro: valores inválidos! Insira apenas números.</p>");
             }
 
-            out.println("<a href='aplicacao2.html'>Voltar</a>");
+            out.println("<div class='center-container'>");
+            out.println("<a class='btn-back' href='aplicacao2.html'>Voltar</a>");
+            out.println("</div>");
             out.println("</body></html>");
         }
     }

@@ -11,7 +11,7 @@ package io.github.vitorribe.joaobotelhoexercicioservlets.negocio;
 public class Calculadora {
     public static String calcular(double num1, double num2) {
         StringBuilder sb = new StringBuilder();
-        sb.append("<h2>Resultados:</h2>");
+        sb.append("<h2>Resultados:</h2><br>");
         sb.append("<p>").append(num1).append(" + ").append(num2).append(" = ").append(num1 + num2).append("</p>");
         sb.append("<p>").append(num1).append(" - ").append(num2).append(" = ").append(num1 - num2).append("</p>");
         sb.append("<p>").append(num1).append(" * ").append(num2).append(" = ").append(num1 * num2).append("</p>");

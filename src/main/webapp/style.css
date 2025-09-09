@@ -156,3 +156,73 @@ footer {
     padding: 2em;
 }
 
+.btn-back {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    margin: 20px auto 0 auto;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+    text-align: center;
+}
+
+.btn-back:hover {
+    background-color: #2980b9;
+}
+
+.center-container {
+    text-align: center;
+}
+
+
+
+.imc-scale {
+    width: 500px;
+    height: 20px;
+    background-color: #ddd; 
+    border-radius: 10px;
+    margin-top: 10px;
+    margin: 30px auto;
+    position: relative;
+}
+
+.imc-indicator {
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.3s;
+}
+
+/* cores por faixa (opcional) */
+.imc-magreza {
+    background-color: #3498db; /* azul */
+}
+
+.imc-normal {
+    background-color: #2ecc71; /* verde */
+}
+
+.imc-sobrepeso {
+    background-color: #f1c40f; /* amarelo */
+}
+
+.imc-obesidade {
+    background-color: #e74c3c; /* vermelho */
+}
+
+/* legenda da escala */
+.imc-legend {
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+    margin: 10px auto;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #555;
+}
+
+.imc-legend div {
+     text-align: center;
+}

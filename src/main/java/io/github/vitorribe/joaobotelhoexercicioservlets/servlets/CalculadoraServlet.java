@@ -42,8 +42,9 @@ public class CalculadoraServlet extends HttpServlet {
         String num2Str = request.getParameter("num2");
 
         try (PrintWriter out = response.getWriter()) {
-            out.println("<html><body>");
+            out.println("<html><link rel='stylesheet' type='text/css' href='style.css'><body>");
             out.println("<h1>Calculadora GET</h1>");
+            out.println("<div class='center-container'>");
 
             try {
                 double num1 = Double.parseDouble(num1Str);
@@ -55,8 +56,9 @@ public class CalculadoraServlet extends HttpServlet {
             } catch (NumberFormatException e) {
                 out.println("<p>Erro: valores inválidos! Insira apenas números.</p>");
             }
-
-            out.println("<a href='aplicacao1.html'>Voltar</a>");
+            
+            out.println("<a class='btn-back' href='aplicacao1.html'>Voltar</a>");
+            out.println("</div>");
             out.println("</body></html>");
         }
     }
