@@ -1,0 +1,158 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 9 de set. de 2025, 06:55:57
+    Author     : vitor
+*/
+
+/* style.css */
+/* style.css */
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #eef2f7;
+    color: #333;
+    padding: 20px;
+}
+
+/* Título principal */
+h1 {
+    text-align: center;
+    margin-top: 150px;
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+p {
+    text-align: center;
+    font-size: 22px;
+    color: #555;
+    margin-bottom: 50px;
+}
+
+/* Container de cards */
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Cada card */
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    background-color: #3498db;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 20px;
+    width: 250px;
+    height: 280px;
+    color: #fff;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Link dentro do card */
+.card a {
+    margin-top: auto;
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 16px;
+    background-color: #2980b9;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+.card p {
+    color: #dbeffc;         
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.card a:hover {
+    background-color: #166393;
+}
+
+.card-icons {
+    margin: 10px 0;       /* espaço entre texto e botão */
+    font-size: 80px;      /* tamanho dos ícones */
+    color: #fff;    
+    display: flex;
+    justify-content: center;
+    gap: 10px;            /* espaço entre ícones */
+}
+
+/* Formulários */
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    max-width: 350px;
+    margin: 0 auto 30px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 6px;
+    margin-top: 2px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+a.back-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: #3498db;
+    text-decoration: none;
+}
+
+a.back-link:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    color: #4f4f4f;
+    padding: 2em;
+}
+
